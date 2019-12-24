@@ -1,0 +1,36 @@
+<div class="container">
+	<div class="row ">
+		<% if flash[:notice] %>
+		 <%= flash[:notice] %>
+		<% end %>
+		<% if @book.errors.any? %>
+ <%= @book.errors.count %>error
+ <%= @book.errors.full_messages.each do |message| %>
+ <%= message %>
+ <% end %>
+ <% end %>
+	 <%= render 'users/sidebar', user: current_user,book: Book.new %>
+	  <div class="col-xs-9">
+	  <h1>Books</h1>
+
+<table class="table">
+	<thead>
+			<tr>
+		<th></th>
+		<th>title</th>
+		<th>opinion</th>
+	</tr>
+	</thead>
+
+	<% @books.each do |book| %>
+    <tr>
+    <td><%= attachment_image_tag book.user, :profile_image, fallback:"no_image.jpg", size:"40x40" %></td>
+  	<td><%= link_to book.title, book_path(book)%></td>
+  	<td><%= book.body %></td>
+  </tr>
+ <% end %>
+</table>
+
+  </div>
+ </div>
+</div>
