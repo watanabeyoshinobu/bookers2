@@ -28,20 +28,20 @@
           <%= link_to " Books", books_path, class: "glyphicon glyphicon-book" %>
         </li>
          <li claass="">
-          <%= link_to " logout", destroy_user_session_path,method: :delete, class: "glyphicon glyphicon-log-in" %>
+          <%= link_to " logout", destroy_user_session_path,method: :delete, class: "glyphicon glyphicon-log-out" %>
         </li>
         <% else %>
         <li>
-         <%= link_to ' Home', root_path, class: "glyphicon glyphicon-home home" %>
+         <%= link_to " Home", root_path, class: "glyphicon glyphicon-home home" %>
         </li>
         <li>
-         <%= link_to ' About', home_about_path, class: "glyphicon glyphicon-link about" %>
+         <%= link_to " About", home_about_path, class: "glyphicon glyphicon-link about" %>
         </li>
         <li>
-         <%= link_to ' Sign up', new_user_registration_path, class: "glyphicon glyphicon-edit sign_up" %>
+         <%= link_to "Sign up", new_user_registration_path, class: "glyphicon glyphicon-edit sign_up" %>
         </li>
         <li>
-         <%= link_to ' Login', new_user_session_path, class: "glyphicon glyphicon-log-in sign_in" %>
+         <%= link_to " login", new_user_session_path, class: "glyphicon glyphicon-log-in sign_in" %>
         </li>
         <% end %>
        </ul>
@@ -49,9 +49,9 @@
     </div>
     </header>
 
-  <div class="container">
-    <div ckass="row">
-      <div class="main">
+  <div class="main">
+    <div class="container">
+     <div class="row">
           <% if flash[:notice] %>
             <%= flash[:notice] %>
           <% end %>

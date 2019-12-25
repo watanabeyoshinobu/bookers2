@@ -1,8 +1,8 @@
-<h1>Editing user</h1>
+<h1>User info</h1>
 
   <% if @user.errors.any? %>
     <div id="error_explanation">
-      <h2><%= @user.errors.count %>件のエラーが発生しました。</h2>
+      <h2><%= @user.errors.count %>件のerrorが発生しました。</h2>
       <ul>
       <% @user.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -11,19 +11,15 @@
     </div>
   <% end %>
  <%= form_for(@user) do |f| %>
-    <h4>title</h4>
+    <h4>Name</h4>
     <%= f.text_field :name %>
 
-    <h4>image</h4>
+    <h4>Image</h4>
     <%= f.attachment_field :profile_image %>
 
-    <h4>body</h4>
+    <h4>Introduction</h4>
     <%= f.text_area :introduction %>
 
-    <%= f.submit 'Update Book' %>
+    <%= f.submit 'Update User' %>
 
 <% end %>
-
-   <%= link_to 'Show', user_path(@user) %>
-
-   <%= link_to 'Back', users_path %>
