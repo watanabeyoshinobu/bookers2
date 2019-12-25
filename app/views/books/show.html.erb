@@ -1,13 +1,11 @@
-<div class="container">
-	<div class="row ">
-		<% if flash[:notice] %>
-		 <%= flash[:notice] %>
-		<% end %>
+<div class="col-xs-3">
 		<%= render 'users/sidebar', user: @book.user,book: Book.new %>
+</div>
+
 		<div class="col-xs-9">
 		<h1>Book detail</h1>
 
-			<table class="table">
+			<table class="table table-striped">
 				<tr>
 					<td><%= attachment_image_tag @book.user, :profile_image, fallback:"no_image.jpg", size:"40x40" %><br><%= link_to @book.user.name,user_path(@book.user) %></td>
 					<td><%= @book.title %></td>
@@ -19,8 +17,4 @@
 				</tr>
 
 			</table>
-		</div>
-	</div>
-
-
 </div>

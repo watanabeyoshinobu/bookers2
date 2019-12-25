@@ -1,12 +1,10 @@
-<div class="container">
-	<div class="row">
-		<% if flash[:notice] %>
-		 <%= flash[:notice] %>
-		<% end %>
+<div class="col-xs-3">
   <%= render 'users/sidebar', user: @user,book: Book.new %>
-	  <div class="col-xs-9">
+</div>
+
+<div class="col-xs-9">
 	  	<h1>Books</h1>
-	  	<table class="table">
+		<table class="table table-striped">
 	  		<thead>
 	  			<tr>
 	  				<th></th>
@@ -22,6 +20,4 @@
          </tr>
          <% end %>
 	  	</table>
-	 </div>
-	</div>
 </div>
